@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.6934097421203438" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="735.0">
+         <items>
+            <VBox alignment="CENTER" minWidth="430.0" prefHeight="419.0" prefWidth="499.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="120.0" minHeight="77.0" prefHeight="77.0" prefWidth="378.0" text="Trading Game">
+                     <font>
+                        <Font name="Arial" size="52.0" />
+                     </font>
+                  </Label>
+                  <Line endX="240.0" startX="-240.0" strokeMiterLimit="20.0" />
+                  <HBox alignment="CENTER" prefHeight="293.0" prefWidth="491.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="335.0" minWidth="240.0" prefHeight="335.0" prefWidth="240.0" spacing="5.0">
+                           <children>
+                              <Label alignment="CENTER" text="News Articles" />
+                              <ListView maxWidth="220.0" prefHeight="260.0" prefWidth="220.0" />
+                              <Button mnemonicParsing="false" text="View Article" />
+                           </children>
+                        </VBox>
+                        <Line endY="170.0" layoutY="-100.0" startY="-170.0">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Line>
+                        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="335.0" minWidth="240.0" prefHeight="335.0" prefWidth="240.0" spacing="5.0">
+                           <children>
+                              <Label alignment="CENTER" text="Stocks to buy" />
+                              <ListView maxWidth="220.0" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" />
+                              <TextField maxWidth="169.0" prefHeight="25.0" prefWidth="169.0" promptText="Quantity" />
+                              <Label text="Order Price: " />
+                              <Button mnemonicParsing="false" text="Buy Stock" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="418.0" minWidth="235.0" prefHeight="418.0" prefWidth="235.0" spacing="5.0">
+               <children>
+                  <LineChart maxHeight="152.0" maxWidth="200.0" minHeight="-Infinity" prefHeight="152.0" prefWidth="200.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+                  <Line endX="100.0" startX="-100.0" />
+                  <Label text="Bought Stocks" />
+                  <ListView maxWidth="220.0" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" />
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+      <Label maxWidth="1.7976931348623157E308" prefHeight="37.0" prefWidth="740.0" text="NEWS TICKER NEWS TICKER NEWS TICKER NEWS TICKER NEWS TICKER" textFill="#00ff26" textOverrun="CLIP">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>
