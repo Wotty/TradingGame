@@ -16,8 +16,8 @@ limitations under the License.
 .candlestick-tooltip-label {
     -fx-font-size: 0.75em;
     -fx-font-weight: bold;
-    -fx-text-fill: #666666;
-    -fx-padding: 2 5 2 0;
+    -fx-text-fill: #F4F4F4;
+    -fx-padding: 0 0 0 0;
 }
 
 .candlestick-average-line {
@@ -26,71 +26,40 @@ limitations under the License.
 }
 
 .candlestick-candle {
-    -fx-background-color: rgb(255,34,34,1.00);
+    -fx-background-color: rgb(225,225,225,100);
 }
 
 .candlestick-line {
-    -fx-stroke: #FFFFFF;
+    -fx-stroke: #000000;
     -fx-stroke-width: 1px;
 }
 
 
 .candlestick-bar.close-above-open {
-    -fx-background-color: rgb(25,225,25,1.00);
-    -fx-border-width: 1, 1,1,1;
-    -fx-border-color: #e2e2e2;
+    -fx-background-color: rgb(25,225,25,100);
 }
 
 .candlestick-bar.open-above-close {
-    -fx-background-color: rgb(255,34,34,1.00); 
-    -fx-border-width: 1, 1,1,1;
+    -fx-background-color: rgb(255,34,34,100); 
     -fx-font-weight: bold;
-    -fx-border-color: #e2e2e2;
 }
-
-
-.label-gray {
-    -fx-background-color: rgb(25,25,25,0.70);
-}
-
 .axis {
-    -fx-text-fill: #FFFFFF;
-    -fx-font-color: #FFFFFF;
-    -fx-tick-label-fill: #FFFFFF;
-    -fx-font-size: 18pt;
-    -fx-font-family: "Segoe UI Light";    
-    -fx-tick-length: 20;
-    -fx-minor-tick-length: 10;
+    -fx-text-fill: #000000;
+    -fx-font-color: #000000;
+    -fx-tick-label-fill: #000000;  
+    -fx-tick-length: 3;
+    -fx-minor-tick-length: 2;
 }
-
-.chart-title {
-     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 20pt;
-    -fx-font-family: "Segoe UI Light";    
-}
-
-.axis-label {
-    -fx-text-fill: #462300; 
-}
-
 .axis-tick-mark {
-    -fx-stroke: #637040;
-    -fx-stroke-width: 3; 
+    -fx-stroke: #000000;
+    -fx-stroke-width: 2px; 
 }
 .axis-minor-tick-mark {
-    -fx-stroke: #859656;
+    -fx-stroke: #000000;
 }
-
-/*{ 
-
-}
-*/
 .chart {
-  -fx-background-color: #657F92;  
-}
-.fx-background-color {
-  -fx-background-color: red;
+  -fx-background-color: #F4F4F4;  
 }
 .chart-plot-background {
-    -fx-background-color: rgb(0,0,0,0.25);
+    -fx-background-color: rgb(226,226,226,100);
 }

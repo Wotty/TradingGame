@@ -19,8 +19,6 @@ limitations under the License.
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -28,15 +26,14 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MainApp extends Application implements Initializable{
 	@FXML private VBox VBOX1;
+	@FXML private VBox VBOX2;
 
 	@Override
 	public void start(Stage stage){
@@ -56,26 +53,24 @@ public class MainApp extends Application implements Initializable{
 
 
 	public List<BarData> buildBars() {
-		double previousClose = 1850;
+		int previousClose = 100;
 
 
 		final List<BarData> bars = new ArrayList<>();
-		GregorianCalendar now = new GregorianCalendar();
-		for (int i = 0; i < 26; i++) {
-			double open = getNewValue(previousClose);
-			double close = getNewValue(open);
-			double high = Math.max(open + getRandom(),close);
-			double low = Math.min(open - getRandom(),close);
+		for (int i = 0; i < 8; i++) {
+			int open = getNewValue(previousClose);
+			int close = getNewValue(open);
+			int high = Math.max(open + getRandom(),close);
+			int low = Math.min(open - getRandom(),close);
 			previousClose = close;
 
-			BarData bar = new BarData((GregorianCalendar) now.clone(), open, high, low, close, 1);
-			now.add(Calendar.MINUTE, 5);
+			BarData bar = new BarData(i, open, high, low, close, 1);
 			bars.add(bar);
 		}
 		return bars;
 	}
 
-	protected double getNewValue( double previousValue ) {
+	protected int getNewValue( int previousValue ) {
 		int sign;
 
 		if( Math.random() < 0.5 ) {
@@ -86,10 +81,10 @@ public class MainApp extends Application implements Initializable{
 		return getRandom() * sign + previousValue;
 	}
 
-	protected double getRandom() {
+	protected int getRandom() {
 		double newValue = 0;
-		newValue = Math.random() * 10;
-		return newValue;
+		newValue = Math.random() * 100;
+		return (int)newValue;
 	}
 
 	/**
@@ -105,14 +100,12 @@ public class MainApp extends Application implements Initializable{
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("HIII");
-		CandleStickChart candleStickChart = new CandleStickChart("S&P 500 Index", buildBars());
+		CandleStickChart candleStickChart = new CandleStickChart(buildBars());
 		candleStickChart.setYAxisFormatter(new DecimalAxisFormatter("#000.00"));
-		candleStickChart.getStylesheets().add("/Fuctionality/CandleStickChartStyles.css");
 		VBOX1.getChildren().add(0,candleStickChart);
-		
-		
-		
+
+
+
 	}
 
 }
