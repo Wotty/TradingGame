@@ -27,7 +27,12 @@
                         <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="335.0" minWidth="240.0" prefHeight="335.0" prefWidth="240.0" spacing="5.0">
                            <children>
                               <Label alignment="CENTER" text="News Articles" />
-                              <ListView maxWidth="220.0" prefHeight="260.0" prefWidth="220.0" />
+                              <TableView fx:id="NewsTable" prefHeight="260.0" prefWidth="220.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Headline" />
+                                  <TableColumn prefWidth="127.0" text="Company Involved" />
+                                </columns>
+                              </TableView>
                               <Button mnemonicParsing="false" text="View Article" />
                            </children>
                         </VBox>
@@ -39,10 +44,16 @@
                         <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="335.0" minWidth="240.0" prefHeight="335.0" prefWidth="240.0" spacing="5.0">
                            <children>
                               <Label alignment="CENTER" text="Stocks to buy" />
-                              <ListView maxWidth="220.0" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" />
+                              <TableView fx:id="AllStockTable" prefHeight="260.0" prefWidth="220.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="ID" />
+                                    <TableColumn prefWidth="75.0" text="Name" />
+                                    <TableColumn prefWidth="75.0" text="Price" />
+                                 </columns>
+                              </TableView>
                               <TextField maxWidth="169.0" prefHeight="25.0" prefWidth="169.0" promptText="Quantity" />
-                              <Label text="Order Price: " />
-                              <Button mnemonicParsing="false" text="Buy Stock" />
+                              <Label fx:id="priceLbl" text="Total Order Price: " />
+                              <Button fx:id="buyBtn" mnemonicParsing="false" text="Buy Stock" />
                            </children>
                         </VBox>
                      </children>
@@ -53,7 +64,14 @@
                <children>
                   <Line endX="100.0" startX="-100.0" />
                   <Label text="Bought Stocks" />
-                  <ListView maxWidth="220.0" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" />
+                  <TableView fx:id="BoughtStockTable" prefHeight="260.0" prefWidth="235.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="75.0" text="Name" />
+                        <TableColumn prefWidth="75.0" text="Qty" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="sellBtn" mnemonicParsing="false" text="Sell Stock" />
                </children>
             </VBox>
          </items>

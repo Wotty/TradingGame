@@ -28,27 +28,38 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import loginApp.Stock;
 
 public class MainApp extends Application implements Initializable{
 	@FXML private VBox VBOX1;
 	@FXML private VBox VBOX2;
+	@FXML private TableView<Stock> AllStockTable;
 
 	@Override
 	public void start(Stage stage){
 		try {
+			//ObservableList<Stock> data = FXCollections.observableArrayList();
+			//AllStockTable.getItems().addAll(DBConnect.stockPopulate(data));
 			Parent root = FXMLLoader.load(getClass().getResource("/Fuctionality/MainMenu.fxml"));
+
+
+
 			Scene scene = new Scene(root);
 			stage.setTitle("Trading Game");
 			stage.setScene(scene);
+
+
+
+
+
 			stage.show();
 		} catch (IOException e) {
 			System.err.println("Exception in the MainApp start method");
 			e.printStackTrace();
 		}
-
-
 	}
 
 
@@ -103,9 +114,5 @@ public class MainApp extends Application implements Initializable{
 		CandleStickChart candleStickChart = new CandleStickChart(buildBars());
 		candleStickChart.setYAxisFormatter(new DecimalAxisFormatter("#000.00"));
 		VBOX1.getChildren().add(0,candleStickChart);
-
-
-
 	}
-
 }
