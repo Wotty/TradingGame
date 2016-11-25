@@ -50,7 +50,7 @@ public class CandleStickChart extends XYChart<String, Number> {
 
 	//protected static final Logger logger = Logger.getLogger(CandleStickChart.class.getName());
 	protected int maxBarsToDisplay;
-	protected ObservableList<XYChart.Series<String, Number>> dataSeries;
+	protected ObservableList<javafx.scene.chart.XYChart.Series<String, Number>> dataSeries;
 	protected BarData lastBar;
 	protected NumberAxis yAxis;
 	protected CategoryAxis xAxis;
@@ -84,6 +84,7 @@ public class CandleStickChart extends XYChart<String, Number> {
 	 * @param bars The bars to display on the chart
 	 * @param maxBarsToDisplay The maximum number of bars to display on the chart.
 	 */
+	@SuppressWarnings("unchecked")
 	public CandleStickChart(CategoryAxis xAxis, NumberAxis yAxis, List<BarData> bars, int maxBarsToDisplay) {
 		super(xAxis, yAxis);
 		this.xAxis = xAxis;

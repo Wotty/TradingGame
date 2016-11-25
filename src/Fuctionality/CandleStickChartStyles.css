@@ -44,8 +44,6 @@ limitations under the License.
     -fx-font-weight: bold;
 }
 .axis {
-    -fx-text-fill: #000000;
-    -fx-font-color: #000000;
     -fx-tick-label-fill: #000000;  
     -fx-tick-length: 3;
     -fx-minor-tick-length: 2;

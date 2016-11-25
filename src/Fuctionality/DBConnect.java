@@ -8,8 +8,6 @@ import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import loginApp.News;
-import loginApp.Stock;
 
 public class DBConnect {
 

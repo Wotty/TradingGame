@@ -31,7 +31,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import loginApp.Stock;
 
 public class MainApp extends Application implements Initializable{
 	@FXML private VBox VBOX1;
